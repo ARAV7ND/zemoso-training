@@ -10,16 +10,16 @@ public class KYC {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int size = Integer.parseInt(scanner.nextLine());
-        String startDate[] = new String[size];
-        String endDate[] = new String[size];
+        String signupDate[] = new String[size];
+        String currentDate[] = new String[size];
         for (int i=0;i<size;i++){
-            startDate[i] = scanner.next();
-            endDate[i] = scanner.next();
+            signupDate[i] = scanner.next();
+            currentDate[i] = scanner.next();
         }
 
         for(int i=0;i<size;i++){
-            LocalDate date1 = LocalDate.parse(startDate[i], DateTimeFormatter.ofPattern("dd-MM-yyyy"));
-            LocalDate date2 = LocalDate.parse(endDate[i], DateTimeFormatter.ofPattern("dd-MM-yyyy"));
+            LocalDate date1 = LocalDate.parse(signupDate[i], DateTimeFormatter.ofPattern("dd-MM-yyyy"));
+            LocalDate date2 = LocalDate.parse(currentDate[i], DateTimeFormatter.ofPattern("dd-MM-yyyy"));
 //            System.out.println(date1);
             if(date1.isAfter(date2)){
                 System.out.println("No range");
