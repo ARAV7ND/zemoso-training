@@ -109,9 +109,7 @@ public class Student {
 
 
         //
-        Optional<Integer> totalMales = gender.get("Male").stream()
-                .map(Student::getStudentAge)
-                .reduce((a,b)->a+b);
+
 
     }
 }

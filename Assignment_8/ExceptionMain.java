@@ -1,39 +1,52 @@
 package Assignment_8;
-class ExceptionOne extends Exception{
-    public ExceptionOne(String message) {
+class InvalidAgeException extends Exception{
+    public InvalidAgeException(String message) {
         super(message);
     }
 }
-class ExceptionTwo extends Exception{
-    public ExceptionTwo(String message) {
+class InvalidGenderException extends Exception{
+    public InvalidGenderException(String message) {
         super(message);
     }
 }
-class ExceptionThree extends Exception{
-    public ExceptionThree(String message) {
+class InvalidAccountException extends Exception{
+    public InvalidAccountException(String message) {
         super(message);
     }
 }
 
 public class ExceptionMain {
+    public static void validateAge(int age) throws InvalidAgeException{
+        if(age<10){
+            throw new InvalidAgeException("Invalid age to open the Account");
+        }else{
+            System.out.println("Your Eligible..!");
+        }
+    }
+    public static void validateGender(String gender) throws InvalidGenderException{
+        if(gender.equalsIgnoreCase("male") || gender.equalsIgnoreCase("female") || gender.equalsIgnoreCase("others")){
+            System.out.println("your eligible");
+        }else{
+            throw new InvalidGenderException("Invalid gender to open the Account");
+        }
+    }
+    public static void validateAccount(String accountType) throws InvalidAccountException{
+        if(accountType.equalsIgnoreCase("savings") || accountType.equalsIgnoreCase("salary")){
+            System.out.println("your about to open the account");
+        }else{
+            throw new InvalidAccountException("Invalid Account Type");
+        }
+    }
     public static void main(String[] args) {
-        int option = 1;
-        try {
-            switch (option) {
-                case 1:
-                    throw new ExceptionOne("Exception of type ExceptionOne");
-                case 2:
-                    throw new ExceptionTwo("Exception of type ExceptionTwo");
-                case 3:
-                    throw new ExceptionOne("Exception of type ExceptionThree");
-                case 4:
-                    throw new NullPointerException("NUll pointer Exception");
-            }
+        try{
+            validateAge(9);
+            validateGender("female");
+            validateAccount("savings");
         }catch (Exception e){
-            e.printStackTrace();
+            System.out.println("Exception occured : "+e);
         }
         finally {
-            System.out.println("im in finally block");
+            System.out.println("Thank you");
         }
     }
 }
