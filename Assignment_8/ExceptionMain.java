@@ -40,7 +40,7 @@ public class ExceptionMain {
     public static void main(String[] args) {
         try{
             validateAge(9);
-            validateGender("female");
+            validateGender("");
             validateAccount("savings");
         }catch (Exception e){
             System.out.println("Exception occured : "+e);
