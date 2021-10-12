@@ -1,33 +1,37 @@
 package Assignment_1;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.InputStreamReader;
+import java.util.Scanner;
 
 public class DirectorySeach {
-    public static int fileSearch(String path,String file){
-        int flag = 0;
-        try{
-            Process process = Runtime.getRuntime().exec(path);
-            BufferedReader outputStream = new BufferedReader(new InputStreamReader(process.getInputStream()));
-            String s = " ";
-            while((s=outputStream.readLine())!=null){
-                if(s.contains(file)) {
-//                    System.out.println(s);
-                    flag++;
+
+    public static void findFile(String path,String fileName){
+        File fileDirectory = new File(path);
+        File[] fileList = fileDirectory.listFiles();
+        boolean flag = false ;
+        if(fileList==null){
+            System.out.println("Empty directory");
+        }else{
+            for(File file : fileList){
+                if(file.getName().equalsIgnoreCase(fileName)){
+                    System.out.println("File found at : "+file.getAbsolutePath());
+                    flag = true;
                 }
             }
-        }catch (Exception e){
-            e.printStackTrace();
         }
-        return flag;
+        if(!flag){
+            System.out.println("File not found");
+        }
+
     }
     public static void main(String[] args) {
-        String path = "ls /home/arvinc/play-ground";
-        String file = "hello";
-        if(fileSearch(path,file)>0){
-            System.out.println("file found in the directory");
-        }else{
-            System.out.println("file not found in the directory");
-        }
+        Scanner scanner = new Scanner(System.in);
+//        String path = "/home/arvinc/play-ground";
+//        String file = "hello.txt";
+        String path = scanner.next();
+        String fileName = scanner.next();
+        findFile(path,fileName);
     }
 }
