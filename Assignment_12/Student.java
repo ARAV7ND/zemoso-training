@@ -83,9 +83,10 @@ public class Student {
 
 //      2. Get the names of all students who have enrolled after 2018?
         System.out.println("\nStudents who enrolled after 2018 :");
-        Stream<String> studentNames = studentList.stream()
+        List<String> studentNames = studentList.stream()
                 .filter(a->a.getYearOfEnrollment() > 2018)
-                .map(Student::getStudentName);
+                .map(Student::getStudentName)
+                .collect(Collectors.toList());
         studentNames.forEach(System.out::println);
 
 
@@ -93,8 +94,8 @@ public class Student {
         System.out.println("\nDetails of all Male students in computer science");
         Stream<Student> studentDetails = studentList.stream()
                             .filter(a->a.getStudentGender().equalsIgnoreCase("male"));
-//        studentDetails.map(Student::getStudentName).
-//                forEach(System.out::println);
+        studentDetails.map(Student::getStudentName)
+                .forEach(System.out::println);
 
 
 
@@ -140,6 +141,7 @@ public class Student {
         }
 
 //      9.Get the details of youngest male student in the Electronic department?
+        System.out.println("\nThe youngest male student in Electronic department is : ");
         Optional<Student> youngestStudent = studentList.stream()
                 .filter(a->a.getStudentGender().equalsIgnoreCase("Male"))
                 .filter(a->a.getEngDepartment().equalsIgnoreCase("Electronic"))
