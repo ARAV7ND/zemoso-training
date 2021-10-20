@@ -1,4 +1,7 @@
 package Assignment_8;
+
+import java.util.Scanner;
+
 class InvalidAgeException extends Exception{
     public InvalidAgeException(String message) {
         super(message);
@@ -38,10 +41,14 @@ public class ExceptionMain {
         }
     }
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
         try{
-            validateAge(9);
-            validateGender("");
-            validateAccount("savings");
+            System.out.println("Enter age :");
+            validateAge(scanner.nextInt());
+            System.out.println("Enter gender :");
+            validateGender(scanner.next());
+            System.out.println("Enter Account type : ");
+            validateAccount(scanner.next());
         }catch (Exception e){
             System.out.println("Exception occured : "+e);
         }

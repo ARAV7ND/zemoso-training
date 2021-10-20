@@ -29,8 +29,10 @@ public class DirectorySeach {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 //        String path = "/home/arvinc/play-ground";
-//        String file = "hello.txt";
+//        String fileName = "hello.txt";
+        System.out.println("Enter the Directory path.");
         String path = scanner.next();
+        System.out.println("Enter the filename or file-extention to search");
         String fileName = scanner.next();
         findFile(path,fileName);
     }

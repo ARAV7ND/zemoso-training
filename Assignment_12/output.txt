@@ -1,0 +1,56 @@
+Name of the departments :
+Computer Science
+Mechanical
+Electronic
+Electrical
+Textile
+Security
+Chemical
+Electric
+
+Students who enrolled after 2018 :
+Jasna Kaur
+Sanvi Pandey
+
+Details of all Male students in computer science
+Paul Niksui
+Martin Theron
+Murali Gowda
+Iqbal Hussain
+Manu Sharma
+Wang Liu
+Jaden Dough
+Nitin Joshi
+Nicolus Den
+Ali Baig
+Anuj Chettiar
+
+Total number of males and females are :
+Male : 11, Female : 6
+
+The Average of ages based on genders
+Avg age of Male : 17.727272727272727, Avg age of Female : 17.833333333333332
+Highest percentage is : 95.8
+count of students in each dept :
+Chemical : 1
+Textile : 2
+Mechanical : 1
+Computer Science : 5
+Electric : 1
+Electronic : 4
+Electrical : 1
+Security : 2
+Average percentage of each department :
+Chemical : 70.0
+Textile : 65.2
+Mechanical : 50.2
+Computer Science : 67.78
+Electric : 72.4
+Electronic : 89.375
+Electrical : 80.0
+Security : 76.0
+
+The youngest male student in Electronic department is :
+Nicolus Den
+
+Total no. of Males : 2, Females : 3

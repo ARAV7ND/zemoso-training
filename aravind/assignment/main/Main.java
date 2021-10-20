@@ -13,10 +13,11 @@ public class Main {
 
         it will be compilation error since we're not intializing values to the variables
         defaultInitialization.displayLocalVariables();
-
-        Singleton singleton = new Singleton();
-        singleton.display();  it won't be invoked since we had an error in that class which is we are trying to accessing non static member inside a static function
-
      */
+        Singleton obj1 = Singleton.setMember("HAI");
+        obj1.display(); // prints HAI
+        Singleton obj2 = Singleton.setMember("HELLO");
+        obj1.display(); //prints HAI since its a singleton class only one instance will get created even if we try to create multiple instances
+
     }
 }
