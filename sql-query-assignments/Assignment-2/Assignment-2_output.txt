@@ -65,17 +65,18 @@ query :
 		on f.film_id = i.film_id join film_category fc
         on fc.film_id = f.film_id join category cg 
         on fc.category_id = cg.category_id
-		where c.first_name = 'PATRICIA' and c.last_name='JOHNSON' limit 0,3;
-
+		where c.first_name = 'PATRICIA' and c.last_name='JOHNSON' 
+        group by cg.name order by count(c.customer_id) desc limit 0,3;
 
 output : 
 +-----------+
 | name      |
 +-----------+
-| Animation |
-| Classics  |
 | Sports    |
+| Classics  |
+| Animation |
 +-----------+
+
 
 
 5.Find out the number of R rated movies rented by “SUSAN WILSON”.   
